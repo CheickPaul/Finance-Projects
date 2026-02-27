@@ -1,4 +1,5 @@
 # Asset Allocation in Excel: Efficient Frontier & Minimum-Variance Benchmark
+<img width="1213" height="506" alt="01_inputs_portfolios_table png" src="https://github.com/user-attachments/assets/98deb05f-1516-4181-a717-93ac4876681a" />
 
 ## Overview
 This project shows how I built a simple **two-asset portfolio allocation model in Excel**.  
@@ -23,12 +24,12 @@ This is a simulation exercise: expected returns, volatilities, and correlation a
 
 **Note on return calculation:** If expected returns were estimated directly from historical prices, I would prefer using **log returns** to better capture intermediate price movements between periods (time-additive property), instead of relying only on simple period-to-period changes.
 
-Screenshot: `screenshots/01_inputs_portfolios_table.png`
+
 
 ---
 
 ## Step 1 — Simulating 101 hypothetical portfolios
-I simulated **101 portfolios** by changing the weight invested in Santander:
+I simulated **101 portfolios** by changing the weight invested in Santander and in CaixaBank:
 - w₁ = 0.00, 0.01, 0.02, …, 1.00  
 - w₂ = 1 − w₁
 
@@ -48,7 +49,6 @@ Formulas (two-asset case):
 - σₚ = √Var(Rp)
 - Cov(X,Y) = ρₓᵧ · σₓ · σᵧ
 
-Screenshot: `screenshots/02_two_asset_formulas.png`
 
 ---
 
@@ -59,20 +59,20 @@ From the efficient frontier, I selected a **low-vol point** offering a **strong 
 - Expected return: **~11.7%**
 - Standard deviation: **~6.0%**
 
-In my simulation table, this corresponds to **Portfolio 67**.
 
-Screenshot: ![03_efficient_frontier](screenshots/03_efficient_frontier.png)`
+<img width="850" height="533" alt="03_efficient_frontier png" src="https://github.com/user-attachments/assets/369fac24-a959-4b86-8e50-d5a73f14be83" />
 
 ---
 
 ## Step 4 — Identifying the portfolio on the simulation table
-After selecting the point on the efficient frontier, I located the matching row in the simulation table.
+After selecting the point on the efficient frontier, I located the matching row in the simulation table. In my simulation table, this corresponds to **Portfolio 67**.
+
 
 **Portfolio 67** allocates:
 - **66%** of wealth to **Santander** → **$660** (out of $1,000)
 - **34%** of wealth to **CaixaBank** → **$340** (out of $1,000)
 
-Screenshot: `screenshots/04_portfolio_67_selection.png`
+<img width="852" height="243" alt="04_portfolio_67_selection png" src="https://github.com/user-attachments/assets/f0fc6c3d-0ee2-4300-a5bf-b823d2e5420d" />
 
 ---
 
@@ -87,8 +87,8 @@ This Min-Var portfolio is a **reference allocation**: it represents the lowest-r
 - It helps frame the trade-off: accepting more risk should be justified by a higher expected return.
 
 Screenshots:
-- `screenshots/05_min_var_point_frontier.png`
-- `screenshots/06_min_var_table.png`
+<img width="870" height="522" alt="05_min_var_point_frontier png" src="https://github.com/user-attachments/assets/b44c3ed8-223f-4bda-a0ea-f29c0905b323" />
+<img width="793" height="527" alt="06_min_var_table png" src="https://github.com/user-attachments/assets/6b603bb0-53d9-4f13-96f7-837ff21a9a4f" />
 
 ---
 
