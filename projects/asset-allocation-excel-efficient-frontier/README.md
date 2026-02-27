@@ -61,7 +61,7 @@ From the efficient frontier, I selected a **low-vol point** offering a **strong 
 
 In my simulation table, this corresponds to **Portfolio 67**.
 
-Screenshot: `screenshots/03_efficient_frontier.png`
+Screenshot: ![03_efficient_frontier](screenshots/03_efficient_frontier.png)`
 
 ---
 
