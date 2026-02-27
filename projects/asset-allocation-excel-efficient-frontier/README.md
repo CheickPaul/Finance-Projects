@@ -72,7 +72,7 @@ After selecting the point on the efficient frontier, I located the matching row 
 - **66%** of wealth to **Santander** → **$660** (out of $1,000)
 - **34%** of wealth to **CaixaBank** → **$340** (out of $1,000)
 
-<img width="852" height="243" alt="04_portfolio_67_selection png" src="https://github.com/user-attachments/assets/f0fc6c3d-0ee2-4300-a5bf-b823d2e5420d" />
+<img width="781" height="286" alt="04_portfolio_67_selection png" src="https://github.com/user-attachments/assets/a0c1fc4e-9cc7-4730-822a-33f1a44b4fec" />
 
 ---
 
