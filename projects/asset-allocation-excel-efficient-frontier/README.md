@@ -1,7 +1,7 @@
 # Asset Allocation in Excel: Efficient Frontier & Minimum-Variance Benchmark
 
 ## Overview
-This project shows how I built a simple **two-asset portfolio allocation model in Excel**.
+This project shows how I built a simple **two-asset portfolio allocation model in Excel**.  
 The objective is to decide how to allocate **$1,000** between **Santander** and **CaixaBank** by evaluating **expected return** and **risk** (variance / volatility) across different portfolio weights.
 
 **Work note:** I built the Excel model and computed the portfolio metrics myself for each simulated allocation (101 portfolios): **E[Portfolio Variance]**, **E[Portfolio Std Dev]**, and **E[Portfolio Return]**, using the input parameters defined in the assumptions.
@@ -29,8 +29,8 @@ Screenshot: `screenshots/01_inputs_portfolios_table.png`
 
 ## Step 1 — Simulating 101 hypothetical portfolios
 I simulated **101 portfolios** by changing the weight invested in Santander:
-- w1 = 0.00, 0.01, 0.02, ..., 1.00
-- w2 = 1 - w1
+- w₁ = 0.00, 0.01, 0.02, …, 1.00  
+- w₂ = 1 − w₁
 
 This produces a grid of portfolios to observe how risk and return evolve with allocation.
 
@@ -38,20 +38,18 @@ This produces a grid of portfolios to observe how risk and return evolve with al
 
 ## Step 2 — Computing portfolio return and risk
 For each portfolio, I computed:
-- Expected portfolio return: `E[Rp]`
-- Expected portfolio variance: `Var(Rp)`
-- Expected portfolio volatility: `sigma_p`
+- Expected portfolio return: E[Rp]
+- Expected portfolio variance: Var(Rp)
+- Expected portfolio volatility: σₚ
 
 Formulas (two-asset case):
-
-```text
-E[Rp]      = w1*E[R1] + w2*E[R2]
-Var(Rp)    = w1^2*sigma1^2 + w2^2*sigma2^2 + 2*w1*w2*Cov(R1,R2)
-sigma_p    = sqrt(Var(Rp))
-Cov(R1,R2] = rho12*sigma1*sigma2
-```
+- E[Rp] = w₁ · E[R₁] + w₂ · E[R₂]
+- Var(Rp) = w₁² · σ₁² + w₂² · σ₂² + 2 · w₁ · w₂ · Cov(R₁,R₂)
+- σₚ = √Var(Rp)
+- Cov(X,Y) = ρₓᵧ · σₓ · σᵧ
 
 Screenshot: `screenshots/02_two_asset_formulas.png`
+
 ---
 
 ## Step 3 — Plotting the Efficient Frontier (Markowitz)
@@ -81,7 +79,7 @@ Screenshot: `screenshots/04_portfolio_67_selection.png`
 ## Step 5 — Minimum-Variance Portfolio (Min-Var)
 The **minimum-variance portfolio (Min-Var)** is the portfolio with the **lowest possible volatility (risk)**, regardless of expected return.
 
-On the Markowitz efficient frontier, it is the **left-most point** (smallest sigma_p).  
+On the Markowitz efficient frontier, it is the **left-most point** (smallest σₚ).  
 This Min-Var portfolio is a **reference allocation**: it represents the lowest-risk configuration available given the two assets and their correlation.
 
 **Why it matters (asset allocation perspective):**
@@ -100,20 +98,20 @@ Comparing the **Min-Var portfolio** with the **Current portfolio** helps to quan
 - whether that extra risk is **compensated** by a higher expected return.
 
 In this project:
-- **Min-Var:** sigma ≈ 5.90%, E[R] ≈ 10.85%
-- **Current PF (Step 4):** sigma ≈ 6.00%, E[R] ≈ 11.70%
+- **Min-Var:** σ ≈ 5.90% and E[R] ≈ 10.85%
+- **Current PF (Step 4):** σ ≈ 6.00% and E[R] ≈ 11.70%
 
 **Difference (Current − Min-Var):**
 - Volatility: **+0.10 percentage point**
 - Expected return: **+0.85 percentage point**
 
-Interpretation:
+Interpretation:  
 The increase in volatility is very small, while the increase in expected return is relatively large. In this case, moving from **Min-Var** to the **Current portfolio** looks like a reasonable trade-off: slightly more risk for a clearly higher expected return, and the Current portfolio remains on the **Markowitz efficient frontier**.
 
 | Situation | Interpretation |
 |---|---|
-| If sigma(Current PF) is close to sigma(Min-Var) and the expected return is only slightly higher | The investor is taking more risk for a relatively small gain in return. |
-| If sigma(Current PF) is much higher than sigma(Min-Var) | The portfolio is aggressive relative to the most diversified combination of the same assets. |
+| If σ(Current PF) is close to σ(Min-Var) and the expected return is only slightly higher | The investor is taking more risk for a relatively small gain in return. |
+| If σ(Current PF) is much higher than σ(Min-Var) | The portfolio is aggressive relative to the most diversified combination of the same assets. |
 | If there exists a portfolio on the efficient frontier with the same volatility as the Current PF but a higher expected return | The Current PF is inefficient (same risk, lower return). |
 
 ---
@@ -122,15 +120,15 @@ The increase in volatility is very small, while the increase in expected return 
 This project helped me see how portfolio risk changes when, in the simulation, I varied the correlation between the assets. This simulation exercise helped me see and understand that **"Portfolio risk depends on individual risks AND on covariance"**. Indeed, **if covariance ↓, total risk ↓**, which shows the importance of **controlled diversification**.
 
 the formula of the standard deviation of a 2-asset portfolio shows it:
-- sigma_p = sqrt(w1^2*sigma1^2 + w2^2*sigma2^2 + 2*w1*w2*rho12*sigma1*sigma2)
+- σₚ = √( w₁² · σ₁² + w₂² · σ₂² + 2 · w₁ · w₂ · ρ₁₂ · σ₁ · σ₂ )
 
-in the case where **Case correlation = +1** : rho12 = 1, we get:
-- sigma_p = w1*sigma1 + w2*sigma2  
+in the case where **Case correlation = +1** : ρ₁₂ = 1, we get:
+- σₚ = w₁ · σ₁ + w₂ · σ₂  
 which corresponds to **Zero diversification: both assets move like one single block.**
 
-in the **Case correlation = −1** : rho12 = -1, we get:
-- sigma_p = |w1*sigma1 - w2*sigma2|  
-here we can **choose** w1, w2 so that sigma_p ≈ 0, which corresponds to **Almost perfect hedge: one asset offsets the other**
+in the **Case correlation = −1** : ρ₁₂ = −1, we get:
+- σₚ = | w₁ · σ₁ − w₂ · σ₂ |  
+here we can **choose** w₁, w₂ so that σₚ ≈ 0, which corresponds to **Almost perfect hedge: one asset offsets the other**
 
 ---
 
