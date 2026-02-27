@@ -28,7 +28,7 @@ This is a simulation exercise: expected returns, volatilities, and correlation a
 
 ---
 
-## Step 1 — Simulating 101 hypothetical portfolios
+## Step 1 : Simulating 101 hypothetical portfolios
 I simulated **101 portfolios** by changing the weight invested in Santander and in CaixaBank:
 - w₁ = 0.00, 0.01, 0.02, …, 1.00  
 - w₂ = 1 − w₁
@@ -37,7 +37,7 @@ This produces a grid of portfolios to observe how risk and return evolve with al
 
 ---
 
-## Step 2 — Computing portfolio return and risk
+## Step 2 : Computing portfolio return and risk
 For each portfolio, I computed:
 - Expected portfolio return: E[Rp]
 - Expected portfolio variance: Var(Rp)
@@ -52,7 +52,7 @@ Formulas (two-asset case):
 
 ---
 
-## Step 3 — Plotting the Efficient Frontier (Markowitz)
+## Step 3 : Plotting the Efficient Frontier (Markowitz)
 I plotted the **Markowitz efficient frontier** using the 101 simulated portfolios (risk on the x-axis, expected return on the y-axis).
 
 From the efficient frontier, I selected a **low-vol point** offering a **strong risk/return trade-off**:
@@ -64,7 +64,7 @@ From the efficient frontier, I selected a **low-vol point** offering a **strong 
 
 ---
 
-## Step 4 — Identifying the portfolio on the simulation table
+## Step 4 : Identifying the portfolio on the simulation table
 After selecting the point on the efficient frontier, I located the matching row in the simulation table. In my simulation table, this corresponds to **Portfolio 67**.
 
 
@@ -76,7 +76,7 @@ After selecting the point on the efficient frontier, I located the matching row 
 
 ---
 
-## Step 5 — Minimum-Variance Portfolio (Min-Var)
+## Step 5 : Minimum-Variance Portfolio (Min-Var)
 The **minimum-variance portfolio (Min-Var)** is the portfolio with the **lowest possible volatility (risk)**, regardless of expected return.
 
 On the Markowitz efficient frontier, it is the **left-most point** (smallest σₚ).  
@@ -92,7 +92,7 @@ Screenshots:
 
 ---
 
-## Step 6 — Min-Var vs Current Portfolio (Risk/Return Trade-off)
+## Step 6 : Min-Var vs Current Portfolio (Risk/Return Trade-off)
 Comparing the **Min-Var portfolio** with the **Current portfolio** helps to quantify:
 - how much **extra risk** we are taking, and
 - whether that extra risk is **compensated** by a higher expected return.
