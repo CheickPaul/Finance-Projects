@@ -38,18 +38,20 @@ This produces a grid of portfolios to observe how risk and return evolve with al
 
 ## Step 2 — Computing portfolio return and risk
 For each portfolio, I computed:
-- **Expected portfolio return** `E[Rp]`
-- **Expected portfolio variance** `Var(Rp)`
-- **Expected portfolio volatility** `sigma_p`
+- Expected portfolio return: `E[Rp]`
+- Expected portfolio variance: `Var(Rp)`
+- Expected portfolio volatility: `sigma_p`
 
 Formulas (two-asset case):
-- `E[Rp] = w1*E[R1] + w2*E[R2]`
-- `Var(Rp) = w1^2*sigma1^2 + w2^2*sigma2^2 + 2*w1*w2*Cov(R1,R2)`
-- `sigma_p = sqrt(Var(Rp))`
-- with `Cov(R1,R2) = rho12*sigma1*sigma2`
+
+```text
+E[Rp]      = w1*E[R1] + w2*E[R2]
+Var(Rp)    = w1^2*sigma1^2 + w2^2*sigma2^2 + 2*w1*w2*Cov(R1,R2)
+sigma_p    = sqrt(Var(Rp))
+Cov(R1,R2] = rho12*sigma1*sigma2
+```
 
 Screenshot: `screenshots/02_two_asset_formulas.png`
-
 ---
 
 ## Step 3 — Plotting the Efficient Frontier (Markowitz)
