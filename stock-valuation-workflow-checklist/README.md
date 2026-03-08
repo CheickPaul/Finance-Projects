@@ -2,7 +2,7 @@
 
 > **Note:** I keep this workflow as a reusable checklist for building different equity valuation projects in Python.  
 > It will guide the structure of my implementations for **DCF valuation**, **Comparable Multiples valuation**, and the **third valuation approach** described in this document.  
-> The goal is to follow the same professional process each time (question → assumptions → data → cleaning → model → checks → sensitivity → output) to ensure consistency, traceability, and reliable results.
+> The goal is to follow the same professional process each time (question → assumptions → data → cleaning → model → checks → sensitivity → output)
 
 ### Context
 
