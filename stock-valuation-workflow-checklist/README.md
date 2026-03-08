@@ -26,8 +26,9 @@ It should **not** be taken as “gospel”, it is a living reference designed to
 ## Stock Valuation Workflow (Checklist)
 
 > Goal: keep this as a “don’t miss steps” checklist when we'll build Python valuation projects.
+> For each step, we tried to answer why it matterd
 
-### 1) Define the business question (WHY these questions matter)
+### 1) Define the business question
 - **What are we valuing (company/ticker)?**
   - Importance: avoids valuing the wrong entity (parent vs subsidiary), wrong share class, wrong currency, or wrong listing. Also defines what “equity” we are pricing (common shares, ADR, etc).
 - **Why are we valuing it (investment decision, report, screening)?**
@@ -43,7 +44,7 @@ It should **not** be taken as “gospel”, it is a living reference designed to
     - Currency matters for rates, inflation, and comparability.
     - Update frequency decides how automated the pipeline must be (one-off vs monthly vs daily).
 
-### 2) Set the key assumptions (WHY this step matters)
+### 2) Set the key assumptions 
 - **Why assumptions are critical**
   - Importance: assumptions are the “engine” of the model. Two analysts can use the same data and get very different values because of different assumptions.
   - Good practice: assumptions must be **explicit**, **consistent**, and **defensible** (not hidden in formulas).
@@ -62,7 +63,7 @@ It should **not** be taken as “gospel”, it is a living reference designed to
 - **Terminal value choice (g or exit multiple)**
   - Importance: terminal value can be a large part of the total valuation. Bad terminal assumptions create misleading results.
 
-### 3) Collect data (WHY this step matters)
+### 3) Collect data 
 - **Why data collection matters**
   - Importance: the model is only as good as its inputs. Wrong data → wrong valuation, even with perfect formulas.
   - Good practice: always keep **sources** and **dates** (audit trail).
@@ -79,7 +80,7 @@ It should **not** be taken as “gospel”, it is a living reference designed to
 - **Consistency across sources**
   - Importance: mixing FY vs TTM, different currencies, or different accounting definitions can silently break the model.
 
-### 4) Clean and normalize the data (WHY this step matters)
+### 4) Clean and normalize the data 
 - **Why cleaning matters**
   - Importance: raw finance data is messy. If periods, units, and definitions are not consistent, the model can be “right” mathematically but wrong financially.
   - Goal: make all inputs **comparable** and **usable** for the valuation formulas.
@@ -95,7 +96,7 @@ It should **not** be taken as “gospel”, it is a living reference designed to
   - Importance: quick sanity checks catch broken data (missing values, sign errors, wrong totals, negative shares, etc.).
   - Example checks: debt ≥ 0, shares > 0, cash flow signs make sense, CAPEX not accidentally positive, etc.
 
-### 5) Build the valuation mechanics (WHY this step matters)
+### 5) Build the valuation mechanics 
 - **Why this step matters**
   - Importance: this is where we convert business assumptions + cleaned data into a fair value estimate in a consistent, repeatable way.
   - Goal: a model that is **transparent** (easy to explain) and **reproducible** (same inputs → same outputs).
@@ -109,7 +110,7 @@ It should **not** be taken as “gospel”, it is a living reference designed to
   - Importance: many mistakes happen here.
   - Reminder: **EV** values the whole business; **Equity value** is what remains for shareholders after debt is considered.
 
-### 6) Run sanity checks (WHY this step matters)
+### 6) Run sanity checks 
 - **Why sanity checks are critical**
   - Importance: valuation models can produce “clean-looking” numbers that are totally unrealistic. Sanity checks prevent bad decisions based on bad outputs.
   - Goal: confirm the result is **financially plausible**, not just mathematically correct.
@@ -126,7 +127,7 @@ It should **not** be taken as “gospel”, it is a living reference designed to
     - reinvestment (capex/WC) is consistent with growth
     - WACC/cost of equity is in a credible range
 
-### 7) Scenario + sensitivity analysis (WHY this step matters)
+### 7) Scenario + sensitivity analysis
 - **Why scenarios are required**
   - Importance: valuation is not one “true” number. It is a range based on uncertainty. Scenarios help communicate uncertainty clearly.
 - **Base / Bull / Bear**
